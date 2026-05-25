@@ -1,0 +1,591 @@
+bash
+
+python3 << 'EOF'
+import base64
+with open('/mnt/user-data/uploads/Untitled_-_May_25__2026_at_13_00_16.png', 'rb') as f:
+    data = base64.b64encode(f.read()).decode()
+img_url = f'data:image/jpeg;base64,{data}'
+print(f"Image ready, length: {len(img_url)}")
+
+html = '''<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pawan Falwaria – Digital Marketing Executive</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{--orange:#ff8c00;--pink:#ff4d6d;--bg:#0f0f0f;--bg2:#1a1a2e;--text:#fff;--muted:#bdbdbd;}
+html{scroll-behavior:smooth;}
+body{font-family:'Poppins',sans-serif;background:#0f0f0f;color:#fff;overflow-x:hidden;}
+.grad-text{background:linear-gradient(135deg,#ff8c00,#ff4d6d);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.grad-btn{background:linear-gradient(135deg,#ff8c00,#ff4d6d);border:none;color:#fff;cursor:pointer;font-family:Poppins;font-weight:700;border-radius:50px;transition:all 0.3s;text-decoration:none;display:inline-block;}
+.grad-btn:hover{transform:translateY(-3px);box-shadow:0 12px 35px rgba(255,140,0,0.45);}
+.outline-btn{background:transparent;border:2px solid #ff8c00;color:#ff8c00;cursor:pointer;font-family:Poppins;font-weight:700;border-radius:50px;transition:all 0.3s;text-decoration:none;display:inline-block;}
+.outline-btn:hover{background:#ff8c00;color:#fff;transform:translateY(-3px);}
+.glass-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:20px;backdrop-filter:blur(10px);transition:all 0.3s;}
+.glass-card:hover{transform:translateY(-8px);border-color:rgba(255,140,0,0.5);box-shadow:0 20px 60px rgba(255,140,0,0.15);}
+.blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:0.12;pointer-events:none;}
+.tag{background:rgba(255,140,0,0.15);border:1px solid rgba(255,140,0,0.3);border-radius:50px;padding:6px 16px;font-size:13px;color:#ff8c00;font-weight:600;display:inline-block;}
+.section-label{color:#ff8c00;font-weight:600;font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:10px;display:block;}
+.section-title{font-size:clamp(2rem,5vw,3rem);font-weight:900;margin-bottom:1rem;}
+.section-sub{color:#bdbdbd;font-size:1.05rem;margin-bottom:3rem;}
+.container{max-width:1200px;margin:0 auto;padding:0 5%;}
+section{position:relative;overflow:hidden;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(15,15,15,0.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.07);}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:68px;}
+.logo{font-size:1.4rem;font-weight:900;cursor:pointer;text-decoration:none;}
+.nav-links{display:flex;gap:2rem;align-items:center;}
+.nav-link{color:#bdbdbd;text-decoration:none;font-size:14px;transition:color 0.3s;cursor:pointer;background:none;border:none;font-family:Poppins;}
+.nav-link:hover{color:#ff8c00;}
+.hamburger{display:none;background:none;border:none;color:#fff;font-size:26px;cursor:pointer;}
+.mobile-menu{display:none;flex-direction:column;gap:18px;padding:1rem 5% 1.5rem;background:rgba(15,15,15,0.98);border-top:1px solid rgba(255,255,255,0.07);}
+.mobile-menu.open{display:flex;}
+
+/* HERO */
+#home{min-height:100vh;display:flex;align-items:center;padding:100px 5% 60px;}
+.hero-inner{max-width:1200px;margin:0 auto;width:100%;display:flex;align-items:center;justify-content:space-between;gap:3rem;flex-wrap:wrap;}
+.hero-content{flex:1 1 480px;z-index:1;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,140,0,0.12);border:1px solid rgba(255,140,0,0.3);border-radius:50px;padding:8px 20px;margin-bottom:1.5rem;font-size:13px;color:#ff8c00;font-weight:600;}
+.hero-title{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:900;line-height:1.1;margin-bottom:1.2rem;}
+.hero-desc{color:#bdbdbd;font-size:1.05rem;margin-bottom:0.8rem;line-height:1.7;}
+.hero-skills{color:rgba(255,140,0,0.9);font-size:0.95rem;margin-bottom:2rem;font-weight:600;}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2.5rem;}
+.hero-stats{display:flex;gap:2.5rem;flex-wrap:wrap;}
+.stat-num{font-size:1.8rem;font-weight:900;color:#ff8c00;}
+.stat-label{color:#bdbdbd;font-size:12px;margin-top:2px;}
+.hero-img-wrap{flex:1 1 280px;display:flex;justify-content:center;align-items:center;position:relative;z-index:1;}
+..hero-img-container{
+position:relative;
+animation:float 4s ease-in-out infinite;
+width:320px;
+height:320px;
+border-radius:50%;
+overflow:hidden;
+}
+.hero-img-container::before{content:'';position:absolute;inset:-4px;border-radius:50%;background:linear-gradient(135deg,#ff8c00,#ff4d6d);z-index:-1;}
+.hero-img-container::after{content:'';position:absolute;inset:-20px;border-radius:50%;background:rgba(255,140,0,0.15);filter:blur(25px);z-index:-2;}
+..hero-img{
+width:320px;
+height:320px;
+border-radius:50%;
+object-fit:cover;
+object-position:center top;
+display:block;
+border:4px solid #0f0f0f;
+}
+@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-15px);}}
+
+/* MARQUEE */
+.marquee-section{background:rgba(255,255,255,0.03);border-top:1px solid rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.06);padding:18px 0;overflow:hidden;}
+.marquee-inner{display:inline-flex;animation:marquee 20s linear infinite;white-space:nowrap;}
+.marquee-item{display:inline-block;margin:0 40px;font-size:15px;font-weight:700;color:rgba(255,255,255,0.2);letter-spacing:3px;text-transform:uppercase;}
+@keyframes marquee{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+
+/* ABOUT */
+#about{padding:100px 5%;}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;}
+.exp-block h3{font-size:1.15rem;font-weight:700;color:#ff8c00;margin-bottom:1.5rem;display:flex;align-items:center;gap:10px;}
+.timeline-item{display:flex;gap:16px;margin-bottom:2rem;}
+.timeline-dot{width:14px;height:14px;border-radius:50%;background:linear-gradient(135deg,#ff8c00,#ff4d6d);flex-shrink:0;margin-top:5px;box-shadow:0 0 12px rgba(255,140,0,0.5);}
+.timeline-content{flex:1;}
+.exp-header{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:6px;margin-bottom:6px;}
+.exp-role{font-weight:700;font-size:1rem;}
+.exp-period{font-size:12px;color:#ff8c00;font-weight:600;background:rgba(255,140,0,0.1);padding:3px 10px;border-radius:20px;white-space:nowrap;}
+.exp-company{color:#ff4d6d;font-size:13px;font-weight:600;margin-bottom:10px;}
+.exp-list{padding-left:16px;display:flex;flex-direction:column;gap:6px;}
+.exp-list li{color:#bdbdbd;font-size:13px;line-height:1.6;}
+.right-col{display:flex;flex-direction:column;gap:2rem;}
+.skills-wrap{display:flex;flex-wrap:wrap;gap:10px;}
+
+/* SERVICES */
+#services{padding:100px 5%;background:rgba(26,26,46,0.5);}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+.service-card{padding:2rem;}
+.service-icon{font-size:2.5rem;margin-bottom:1rem;display:block;}
+.service-card h3{font-size:1.15rem;font-weight:700;margin-bottom:0.75rem;}
+.service-card p{color:#bdbdbd;font-size:14px;line-height:1.7;}
+
+/* PROJECTS */
+#projects{padding:100px 5%;}
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.5rem;}
+.project-card{padding:2rem;}
+.project-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;flex-wrap:wrap;gap:8px;}
+.project-live{background:rgba(255,77,109,0.15);border:1px solid rgba(255,77,109,0.3);border-radius:50px;padding:5px 14px;font-size:12px;color:#ff4d6d;font-weight:700;text-decoration:none;white-space:nowrap;}
+.project-card h3{font-size:1.4rem;font-weight:800;margin-bottom:0.75rem;}
+.project-card p{color:#bdbdbd;font-size:14px;line-height:1.7;margin-bottom:1.5rem;}
+.project-link{color:#ff8c00;font-weight:700;font-size:14px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:gap 0.2s;}
+.project-link:hover{gap:10px;}
+
+/* WHY */
+.why-section{padding:80px 5%;background:rgba(26,26,46,0.5);}
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;}
+.why-card{padding:2rem;text-align:center;}
+.why-icon{font-size:2.5rem;margin-bottom:1rem;display:block;}
+.why-card h3{font-size:1.05rem;font-weight:700;margin-bottom:0.5rem;}
+.why-card p{color:#bdbdbd;font-size:13px;line-height:1.6;}
+
+/* TESTIMONIALS */
+.testi-section{padding:100px 5%;}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+.testi-card{padding:2rem;}
+.testi-stars{color:#ff8c00;font-size:18px;margin-bottom:1rem;letter-spacing:2px;}
+.testi-card blockquote{color:#bdbdbd;font-size:14px;line-height:1.7;margin-bottom:1.5rem;font-style:italic;}
+.testi-divider{border-top:1px solid rgba(255,255,255,0.08);padding-top:14px;}
+.testi-name{font-weight:700;font-size:15px;}
+.testi-role{color:#bdbdbd;font-size:12px;margin-top:3px;}
+
+/* STATS */
+.stats-section{padding:80px 5%;background:rgba(26,26,46,0.5);}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;}
+.stat-card{padding:2rem;text-align:center;}
+.stat-big{font-size:2.8rem;font-weight:900;background:linear-gradient(135deg,#ff8c00,#ff4d6d);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.stat-card p{color:#bdbdbd;margin-top:8px;font-size:13px;}
+
+/* CONTACT */
+#contact{padding:100px 5%;}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;}
+.contact-item{display:flex;align-items:flex-start;gap:16px;margin-bottom:20px;}
+.contact-icon{width:48px;height:48px;border-radius:12px;background:rgba(255,140,0,0.12);border:1px solid rgba(255,140,0,0.25);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.contact-label{color:#bdbdbd;font-size:12px;margin-bottom:3px;}
+.contact-val{font-weight:600;font-size:14px;line-height:1.4;}
+.social-btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px;}
+.wa-btn{display:inline-flex;align-items:center;gap:8px;background:#25D366;border-radius:50px;padding:12px 24px;color:#fff;font-weight:700;font-size:14px;text-decoration:none;transition:transform 0.2s;}
+.wa-btn:hover{transform:translateY(-2px);}
+.social-btn{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:50px;padding:10px 20px;color:#fff;font-weight:600;font-size:13px;text-decoration:none;transition:all 0.3s;}
+.social-btn:hover{background:rgba(255,140,0,0.15);border-color:rgba(255,140,0,0.3);color:#ff8c00;}
+.form-wrap{padding:2rem;}
+.form-wrap h3{font-weight:700;margin-bottom:1.5rem;font-size:1.1rem;}
+.form-group{display:flex;flex-direction:column;gap:14px;}
+.form-group input,.form-group textarea{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.15);color:#fff;border-radius:12px;padding:14px 18px;font-family:Poppins;font-size:15px;outline:none;transition:border-color 0.3s;width:100%;}
+.form-group input:focus,.form-group textarea:focus{border-color:#ff8c00;}
+.form-group input::placeholder,.form-group textarea::placeholder{color:#888;}
+.form-group textarea{resize:vertical;}
+.send-btn{background:linear-gradient(135deg,#ff8c00,#ff4d6d);border:none;color:#fff;cursor:pointer;font-family:Poppins;font-weight:700;border-radius:12px;padding:14px;font-size:15px;width:100%;transition:all 0.3s;}
+.send-btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(255,140,0,0.4);}
+
+/* FOOTER */
+footer{background:#080808;border-top:1px solid rgba(255,255,255,0.06);padding:40px 5%;}
+.footer-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;}
+.footer-logo{font-size:1.3rem;font-weight:900;}
+.footer-links{display:flex;gap:2rem;flex-wrap:wrap;}
+.footer-link{color:#555;cursor:pointer;font-size:13px;transition:color 0.3s;text-decoration:none;background:none;border:none;font-family:Poppins;}
+.footer-link:hover{color:#ff8c00;}
+.footer-copy{color:#333;font-size:12px;}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero-inner{flex-direction:column;}
+  .hero-img-wrap{order:-1;}
+  .about-grid{grid-template-columns:1fr;}
+  .services-grid{grid-template-columns:1fr 1fr;}
+  .why-grid{grid-template-columns:1fr 1fr;}
+  .testi-grid{grid-template-columns:1fr 1fr;}
+  .stats-grid{grid-template-columns:1fr 1fr;}
+  .contact-grid{grid-template-columns:1fr;}
+}
+@media(max-width:550px){
+  .nav-links{display:none;}
+  .hamburger{display:block;}
+  .services-grid{grid-template-columns:1fr;}
+  .why-grid{grid-template-columns:1fr 1fr;}
+  .testi-grid{grid-template-columns:1fr;}
+  .stats-grid{grid-template-columns:1fr 1fr;}
+  .hero-btns a,.hero-btns button{width:100%;text-align:center;}
+}
+@media(max-width:400px){
+  .why-grid{grid-template-columns:1fr;}
+  .stats-grid{grid-template-columns:1fr 1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="#home"><span class="grad-text">Pawan</span> Falwaria</a>
+    <div class="nav-links">
+      <a class="nav-link" href="#home">Home</a>
+      <a class="nav-link" href="#about">About</a>
+      <a class="nav-link" href="#services">Services</a>
+      <a class="nav-link" href="#projects">Projects</a>
+      <a class="nav-link" href="#contact">Contact</a>
+      <a class="grad-btn" href="#contact" style="padding:10px 24px;font-size:14px;">Hire Me</a>
+    </div>
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a class="nav-link" href="#home" onclick="closeMenu()">Home</a>
+    <a class="nav-link" href="#about" onclick="closeMenu()">About</a>
+    <a class="nav-link" href="#services" onclick="closeMenu()">Services</a>
+    <a class="nav-link" href="#projects" onclick="closeMenu()">Projects</a>
+    <a class="nav-link" href="#contact" onclick="closeMenu()">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+  <div class="blob" style="width:600px;height:600px;background:#ff8c00;top:-150px;left:-150px;"></div>
+  <div class="blob" style="width:350px;height:350px;background:#ff4d6d;bottom:-50px;right:50px;"></div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge">✦ Digital Marketing Executive &nbsp;·&nbsp; New Delhi, India</div>
+      <h1 class="hero-title">Hi, I'm <span class="grad-text">Pawan</span><br>Falwaria</h1>
+      <p class="hero-desc">Results-driven Digital Marketing professional with hands-on experience in social media management, SEO, content creation, and WordPress website development.</p>
+      <p class="hero-skills">Social Media &nbsp;·&nbsp; WordPress &nbsp;·&nbsp; Meta & Google Ads &nbsp;·&nbsp; SEO</p>
+      <div class="hero-btns">
+        <a class="grad-btn" href="#projects" style="padding:14px 32px;font-size:15px;">View Portfolio →</a>
+        <a class="outline-btn" href="#contact" style="padding:14px 32px;font-size:15px;">Let\'s Talk</a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="stat-num">3+</div><div class="stat-label">Years Exp.</div></div>
+        <div><div class="stat-num">2</div><div class="stat-label">Live Sites</div></div>
+        <div><div class="stat-num">10+</div><div class="stat-label">Posts / Week</div></div>
+      </div>
+    </div>
+    <div class="hero-img-wrap">
+      <div class="hero-img-container">
+        <img class="hero-img" src="images/pawan.jpg" alt="Pawan Falwaria">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-section">
+  <div class="marquee-inner">
+    <span class="marquee-item">Meta</span><span class="marquee-item">Google</span><span class="marquee-item">WordPress</span><span class="marquee-item">Shopify</span><span class="marquee-item">Elementor</span><span class="marquee-item">Canva</span>
+    <span class="marquee-item">Meta</span><span class="marquee-item">Google</span><span class="marquee-item">WordPress</span><span class="marquee-item">Shopify</span><span class="marquee-item">Elementor</span><span class="marquee-item">Canva</span>
+    <span class="marquee-item">Meta</span><span class="marquee-item">Google</span><span class="marquee-item">WordPress</span><span class="marquee-item">Shopify</span><span class="marquee-item">Elementor</span><span class="marquee-item">Canva</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="blob" style="width:300px;height:300px;background:#ff4d6d;top:30%;right:-80px;opacity:0.1;"></div>
+  <div class="container">
+    <div style="text-align:center;margin-bottom:3rem;">
+      <span class="section-label">Background</span>
+      <h2 class="section-title">Experience &amp; <span class="grad-text">Education</span></h2>
+      <p class="section-sub">A journey from executive coordination to digital marketing mastery</p>
+    </div>
+    <div class="about-grid">
+      <div class="exp-block">
+        <h3>💼 Work Experience</h3>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="glass-card" style="padding:1.25rem 1.5rem;">
+              <div class="exp-header">
+                <span class="exp-role">Digital Marketing Executive</span>
+                <span class="exp-period">2026 – Present</span>
+              </div>
+              <p class="exp-company">Digi Uprise – Digital Marketing Institute</p>
+              <ul class="exp-list">
+                <li>Created and scheduled 10+ social media posts weekly, improving engagement</li>
+                <li>Conducted keyword research to support SEO optimization and improve visibility</li>
+                <li>Assisted in campaign execution and monitored performance metrics</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="glass-card" style="padding:1.25rem 1.5rem;">
+              <div class="exp-header">
+                <span class="exp-role">Executive Assistant</span>
+                <span class="exp-period">Aug 2025 – Jan 2026</span>
+              </div>
+              <p class="exp-company">Vivek Travels Pvt Ltd</p>
+              <ul class="exp-list">
+                <li>Handled email correspondence, documentation, and file management</li>
+                <li>Organized travel arrangements and logistics efficiently</li>
+                <li>Coordinated administrative workflows and communication</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="glass-card" style="padding:1.25rem 1.5rem;">
+              <div class="exp-header">
+                <span class="exp-role">Executive Assistant</span>
+                <span class="exp-period">Apr 2023 – May 2025</span>
+              </div>
+              <p class="exp-company">RLDA</p>
+              <ul class="exp-list">
+                <li>Managed executive calendars and scheduled 20+ meetings weekly</li>
+                <li>Coordinated meetings with government officials and prepared minutes</li>
+                <li>Handled documentation and organized travel arrangements</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="right-col">
+        <div>
+          <h3 style="font-size:1.15rem;font-weight:700;color:#ff8c00;margin-bottom:1.5rem;display:flex;align-items:center;gap:10px;">🎓 Education</h3>
+          <div class="glass-card" style="padding:1.5rem;">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:6px;">
+              <div>
+                <h4 style="font-weight:700;font-size:1rem;margin-bottom:4px;">Bachelor of Arts (Humanities)</h4>
+                <p style="color:#ff4d6d;font-size:13px;font-weight:600;">School of Open Learning (SOL), New Delhi</p>
+              </div>
+              <span style="font-size:12px;color:#ff8c00;font-weight:600;background:rgba(255,140,0,0.1);padding:3px 10px;border-radius:20px;">2021</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 style="font-size:1.15rem;font-weight:700;color:#ff8c00;margin-bottom:1.5rem;display:flex;align-items:center;gap:10px;">🏆 Certifications</h3>
+          <div class="glass-card" style="padding:1.5rem;display:flex;flex-direction:column;gap:12px;">
+            <div style="display:flex;align-items:flex-start;gap:10px;"><span style="color:#ff8c00;font-size:16px;margin-top:1px;">✦</span><span style="color:#bdbdbd;font-size:14px;line-height:1.5;">Professional Digital Marketing Course – Digi Uprise</span></div>
+            <div style="display:flex;align-items:flex-start;gap:10px;"><span style="color:#ff8c00;font-size:16px;margin-top:1px;">✦</span><span style="color:#bdbdbd;font-size:14px;line-height:1.5;">Financial Accounting with Tally ERP 9</span></div>
+            <div style="display:flex;align-items:flex-start;gap:10px;"><span style="color:#ff8c00;font-size:16px;margin-top:1px;">✦</span><span style="color:#bdbdbd;font-size:14px;line-height:1.5;">Documentation Assistant (NSDC)</span></div>
+          </div>
+        </div>
+        <div>
+          <h3 style="font-size:1.15rem;font-weight:700;color:#ff8c00;margin-bottom:1.5rem;display:flex;align-items:center;gap:10px;">⚙️ Skills</h3>
+          <div class="skills-wrap">
+            <span class="tag">Social Media Marketing</span>
+            <span class="tag">Social Media Management</span>
+            <span class="tag">Content Creation</span>
+            <span class="tag">Keyword Research</span>
+            <span class="tag">SEO Basics</span>
+            <span class="tag">WordPress</span>
+            <span class="tag">Meta & Google Ads</span>
+            <span class="tag">Time Management</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="blob" style="width:300px;height:300px;background:#ff8c00;bottom:-100px;left:-50px;opacity:0.1;"></div>
+  <div class="container">
+    <div style="text-align:center;margin-bottom:3rem;">
+      <span class="section-label">What I Offer</span>
+      <h2 class="section-title">My <span class="grad-text">Services</span></h2>
+      <p class="section-sub">Comprehensive digital solutions tailored to grow your business</p>
+    </div>
+    <div class="services-grid">
+      <div class="glass-card service-card"><span class="service-icon">📱</span><h3>Social Media Marketing</h3><p>Strategic campaigns that build brand awareness, drive engagement, and grow your audience organically.</p></div>
+      <div class="glass-card service-card"><span class="service-icon">🌐</span><h3>WordPress Website Design</h3><p>Responsive, SEO-optimized WordPress websites built for lead generation and strong user experience.</p></div>
+      <div class="glass-card service-card"><span class="service-icon">📣</span><h3>Meta & Google Ads</h3><p>Data-driven paid campaigns on Meta and Google that maximize ROI and reach your ideal audience.</p></div>
+      <div class="glass-card service-card"><span class="service-icon">🔍</span><h3>SEO Optimization</h3><p>On-page SEO — keywords, meta tags, headings, and site structure — that push your brand up the rankings.</p></div>
+      <div class="glass-card service-card"><span class="service-icon">✍️</span><h3>Content Creation</h3><p>Compelling content that tells your brand story, engages your audience, and supports lead generation.</p></div>
+      <div class="glass-card service-card"><span class="service-icon">📊</span><h3>Social Media Management</h3><p>10+ weekly posts scheduled and managed, with performance tracking and continuous strategy improvement.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:3rem;">
+      <span class="section-label">Portfolio</span>
+      <h2 class="section-title">Live <span class="grad-text">Projects</span></h2>
+      <p class="section-sub">WordPress websites designed, built, and launched for real clients</p>
+    </div>
+    <div class="projects-grid">
+      <div class="glass-card project-card">
+        <div class="project-top">
+          <span class="tag">WordPress · 2026</span>
+          <a class="project-live" href="https://www.hunarstudio99.com" target="_blank">Live Site ↗</a>
+        </div>
+        <h3>Hunar Studio</h3>
+        <p>Designed and developed the full website for a Digital Marketing Agency. Built structured service pages, implemented on-page SEO, and optimized for mobile responsiveness.</p>
+        <a class="project-link" href="https://www.hunarstudio99.com" target="_blank">Visit Website →</a>
+      </div>
+      <div class="glass-card project-card">
+        <div class="project-top">
+          <span class="tag">WordPress · 2026</span>
+          <a class="project-live" href="https://sachinmishralaw.com" target="_blank">Live Site ↗</a>
+        </div>
+        <h3>Sachin Mishra & Associates</h3>
+        <p>Created a responsive law firm website with structured service pages, on-page SEO implementation, and a clean user experience to support lead generation and branding.</p>
+        <a class="project-link" href="https://sachinmishralaw.com" target="_blank">Visit Website →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE ME -->
+<div class="why-section">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:3rem;">
+      <span class="section-label">Why Me</span>
+      <h2 class="section-title">Why <span class="grad-text">Choose Me</span></h2>
+    </div>
+    <div class="why-grid">
+      <div class="glass-card why-card"><span class="why-icon">⚡</span><h3>Fast Delivery</h3><p>Projects delivered on time, every time.</p></div>
+      <div class="glass-card why-card"><span class="why-icon">✨</span><h3>Creative Designs</h3><p>Unique, memorable visuals that stand out.</p></div>
+      <div class="glass-card why-card"><span class="why-icon">📈</span><h3>Result-Oriented</h3><p>Every strategy driven by measurable outcomes.</p></div>
+      <div class="glass-card why-card"><span class="why-icon">💰</span><h3>Affordable Pricing</h3><p>Premium quality at competitive rates.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<div class="testi-section">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:3rem;">
+      <span class="section-label">Testimonials</span>
+      <h2 class="section-title">Client <span class="grad-text">Reviews</span></h2>
+    </div>
+    <div class="testi-grid">
+      <div class="glass-card testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <blockquote>"Pawan built our law firm website from scratch. The design is professional, SEO-ready, and has already improved our online enquiries significantly."</blockquote>
+        <div class="testi-divider"><p class="testi-name">Sachin Mishra</p><p class="testi-role">Founder, Sachin Mishra & Associates</p></div>
+      </div>
+      <div class="glass-card testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <blockquote>"Clean, fast, and fully optimized — exactly what we needed. Pawan understood our brand and delivered a website that genuinely represents us."</blockquote>
+        <div class="testi-divider"><p class="testi-name">Hunar Studio Team</p><p class="testi-role">Digital Marketing Agency</p></div>
+      </div>
+      <div class="glass-card testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <blockquote>"Pawan\'s SEO work and social media management brought consistent growth. Our visibility improved dramatically within just a few weeks."</blockquote>
+        <div class="testi-divider"><p class="testi-name">Marketing Manager</p><p class="testi-role">Digital Client</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats-section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="glass-card stat-card"><div class="stat-big" data-target="3" data-suffix="+">0+</div><p>Years Experience</p></div>
+      <div class="glass-card stat-card"><div class="stat-big" data-target="2" data-suffix="">0</div><p>Live Websites</p></div>
+      <div class="glass-card stat-card"><div class="stat-big" data-target="10" data-suffix="+">0+</div><p>Posts Per Week</p></div>
+      <div class="glass-card stat-card"><div class="stat-big" data-target="20" data-suffix="+">0+</div><p>Meetings / Week</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="blob" style="width:400px;height:400px;background:#ff8c00;bottom:-100px;left:-100px;opacity:0.1;"></div>
+  <div class="blob" style="width:300px;height:300px;background:#ff4d6d;top:0;right:-50px;opacity:0.08;"></div>
+  <div class="container" style="position:relative;z-index:1;">
+    <div style="text-align:center;margin-bottom:3rem;">
+      <span class="section-label">Get In Touch</span>
+      <h2 class="section-title">Let\'s <span class="grad-text">Work Together</span></h2>
+      <p class="section-sub">Have a project in mind? Let\'s grow your business together.</p>
+    </div>
+    <div class="contact-grid">
+      <div>
+        <div class="contact-item">
+          <div class="contact-icon">📧</div>
+          <div><p class="contact-label">Email</p><p class="contact-val">pawanfalwaria99@gmail.com</p></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div><p class="contact-label">Phone</p><p class="contact-val">9873629064</p></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div><p class="contact-label">Location</p><p class="contact-val">New Delhi, India</p></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🌐</div>
+          <div><p class="contact-label">Portfolio Sites</p><p class="contact-val">hunarstudio99.com &amp; sachinmishralaw.com</p></div>
+        </div>
+        <div class="social-btns">
+          <a class="wa-btn" href="https://wa.me/919873629064" target="_blank">💬 WhatsApp</a>
+          <a class="social-btn" href="#">Instagram</a>
+          <a class="social-btn" href="#">LinkedIn</a>
+        </div>
+      </div>
+      <div class="glass-card form-wrap">
+        <h3>Send a Message</h3>
+        <div class="form-group">
+          <input type="text" placeholder="Your Name" />
+          <input type="email" placeholder="Your Email" />
+          <input type="text" placeholder="Subject" />
+          <textarea placeholder="Your Message" rows="5"></textarea>
+          <button class="send-btn" onclick="alert(\'Message sent! I will get back to you soon.\')">Send Message ✈</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo"><span class="grad-text">Pawan</span> Falwaria</div>
+      <div style="color:#555;font-size:13px;margin-top:4px;">Designs That Grow Businesses</div>
+    </div>
+    <div class="footer-links">
+      <a class="footer-link" href="#home">Home</a>
+      <a class="footer-link" href="#about">About</a>
+      <a class="footer-link" href="#services">Services</a>
+      <a class="footer-link" href="#projects">Projects</a>
+      <a class="footer-link" href="#contact">Contact</a>
+    </div>
+    <div class="footer-copy">© 2026 Pawan Falwaria · New Delhi, India</div>
+  </div>
+</footer>
+
+<script>
+function toggleMenu(){
+  var m=document.getElementById("mobileMenu");
+  m.classList.toggle("open");
+}
+function closeMenu(){
+  document.getElementById("mobileMenu").classList.remove("open");
+}
+
+// Animated counters
+function animateCounters(){
+  document.querySelectorAll(".stat-big[data-target]").forEach(function(el){
+    var target=parseInt(el.getAttribute("data-target"));
+    var suffix=el.getAttribute("data-suffix")||"";
+    var current=0;
+    var step=Math.ceil(target/50);
+    var timer=setInterval(function(){
+      current+=step;
+      if(current>=target){current=target;clearInterval(timer);}
+      el.textContent=current+suffix;
+    },40);
+  });
+}
+
+// Intersection Observer for counters
+var statsSection=document.querySelector(".stats-section");
+if(statsSection){
+  var observer=new IntersectionObserver(function(entries){
+    if(entries[0].isIntersecting){animateCounters();observer.disconnect();}
+  },{threshold:0.5});
+  observer.observe(statsSection);
+}
+
+// Close mobile menu on scroll
+window.addEventListener("scroll",function(){
+  document.getElementById("mobileMenu").classList.remove("open");
+});
+</script>
+</body>
+</html>'''
+
+with open('/home/claude/portfolio.html', 'w') as f:
+    f.write(html)
+
+print("HTML done. Size:", len(html), "bytes")
+EOF
+Output
+
+Image ready, length: 182063
+HTML done. Size: 214468 bytes
